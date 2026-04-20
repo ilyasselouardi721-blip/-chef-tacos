@@ -1,0 +1,180 @@
+from pathlib import Path
+
+html_code = """<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ô'Chef Tacos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #111;
+      color: white;
+    }
+
+    header {
+      background-color: #f4c400;
+      color: black;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 32px;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h2 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background-color: #f4c400;
+      color: black;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .menu-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background-color: #222;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      color: #f4c400;
+      margin: 15px 0 10px;
+    }
+
+    .card p {
+      padding: 0 15px 20px;
+    }
+
+    .contact {
+      background-color: #f4c400;
+      color: black;
+    }
+
+    footer {
+      background-color: black;
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ô'Chef Tacos</h1>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Menu</a>
+      <a href="#">À propos</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Les Meilleurs Tacos de la Ville</h2>
+    <p>Commandez vos tacos préférés rapidement et facilement.</p>
+    <button class="btn">Commander Maintenant</button>
+  </section>
+
+  <section>
+    <h2>Nos Menus Populaires</h2>
+    <div class="menu-container">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80">
+        <h3>Tacos XL</h3>
+        <p>Double viande, frites, sauce fromagère.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb?auto=format&fit=crop&w=800&q=80">
+        <h3>Tacos Mixte</h3>
+        <p>Poulet, viande hachée et fromage.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?auto=format&fit=crop&w=800&q=80">
+        <h3>Tacos Spécial</h3>
+        <p>Menu complet avec boisson et dessert.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Téléphone : +212 6 12 34 56 78</p>
+    <p>WhatsApp : +212 6 12 34 56 78</p>
+    <p>Adresse : Tanger, Maroc</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Ô'Chef Tacos - Tous droits réservés</p>
+  </footer>
+
+</body>
+</html>
+"""
+
+path = Path("/mnt/data/ochef_tacos_site.html")
+path.write_text(html_code, encoding="utf-8")
+
+print(path)
